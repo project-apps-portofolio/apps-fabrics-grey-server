@@ -13,6 +13,11 @@
 |
 */
 
+header('Access-Control-Allow-Origin: *');
+// header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
+header( 'Access-Control-Allow-Headers: *');
+header('Access-Control-Allow-Methods:*');
+
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
@@ -22,7 +27,7 @@ $router->group(['namespace' => 'Auth'], function() use ($router) {
     $router->post('login', 'AuthController@login');
 });
 
-$router->group(['prefix' => 'api'], function () use ($router) {
+$router->group(['prefix' => 'api', 'middleware' => 'auth'], function () use ($router) {
     $router->group(['namespace' => 'Fabric', 'prefix' => 'fabric'], function () use ($router) {
         $router->get('/', 'FabricController@index');
         $router->post('/store', 'FabricController@store');

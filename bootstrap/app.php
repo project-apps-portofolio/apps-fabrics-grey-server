@@ -64,7 +64,7 @@ $app->singleton(
 
 $app->configure('app');
 $app->configure('cors');
-// $app->configure('auth');
+$app->configure('auth');
 
 /*
 |--------------------------------------------------------------------------
@@ -78,13 +78,15 @@ $app->configure('cors');
 */
 
 $app->middleware([
-    App\Http\Middleware\JwtMiddleware::class,
+    // App\Http\Middleware\JwtMiddleware::class,
     Fruitcake\Cors\HandleCors::class,
+    // App\Http\Middleware\VerifyCsrfToken::class
+    
 ]);
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
-    'api.jwt' => App\Http\Middleware\JwtMiddleware::class,
+    // 'api.jwt' => App\Http\Middleware\JwtMiddleware::class,
     'cors' => Fruitcake\Cors\HandleCors::class,
 ]);
 
