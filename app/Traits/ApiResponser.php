@@ -6,8 +6,8 @@ use Illuminate\Http\Response;
 
 trait ApiResponser {
     
-    public function successResponse($data, $code = Response::HTTP_OK) {
-        return \response()->json(['data' => $data], $code);
+    public function successResponse($data, $message, $code = Response::HTTP_OK) {
+        return \response()->json(['massage' => $message, 'data' => $data, 'code' => $code ], $code);
 
     }
 

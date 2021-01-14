@@ -19,11 +19,14 @@ $router->get('/', function () use ($router) {
 
 $router->group(['namespace' => 'Auth'], function() use ($router) {
     $router->post('register', 'AuthController@register');
+    $router->post('login', 'AuthController@login');
 });
 
-$router->group(['prefix' => 'api', 'middleware' => ['api.jwt', 'cors']], function () use ($router) {
+$router->group(['prefix' => 'api'], function () use ($router) {
     $router->group(['namespace' => 'Fabric', 'prefix' => 'fabric'], function () use ($router) {
         $router->get('/', 'FabricController@index');
+        $router->post('/store', 'FabricController@store');
+        $router->put('/update/{id}', 'FabricController@update');
     });
     $router->group(['namespace' => 'Machine', 'prefix' => 'machine'], function () use ($router) {
         $router->get('/', 'MachineController@index');

@@ -17,10 +17,12 @@ class AuthController extends Controller
     public function login(Request $request) {
         $credentials = $request->only('name', 'password');
 
+        // var_dump($credentials); die;
+
         if(!$token = JWTAuth::attempt($credentials)) {
             return response()->json(['errors' => 'failed'], 'failed');
-        } 
-        return $this->sendResponse(compact('tokens'), 'success');
+        }
+        return $this->sendResponse(compact('token'), 'success');
     }
 
     public function register(Request $request) {
