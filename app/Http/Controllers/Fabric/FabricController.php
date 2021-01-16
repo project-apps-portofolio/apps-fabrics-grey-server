@@ -16,7 +16,7 @@ class FabricController extends Controller
     public function __construct()
     {
         $this->fabric = Fabric::FabricJson();
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     public function index()

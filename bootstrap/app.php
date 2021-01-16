@@ -80,6 +80,7 @@ $app->configure('auth');
 $app->middleware([
     // App\Http\Middleware\JwtMiddleware::class,
     Fruitcake\Cors\HandleCors::class,
+    App\Http\Middleware\CorsMiddleware::class // Add this
     // App\Http\Middleware\VerifyCsrfToken::class
     
 ]);
