@@ -21,7 +21,7 @@ class FabricController extends Controller
 
     public function index()
     {
-        try {
+        // try {
 
             $result = $this->fabric;
             if ($result->count() > 0) {
@@ -29,10 +29,10 @@ class FabricController extends Controller
             } else {
                 return $this->successResponse($result, 'GET Success', 200);
             }
-        } catch (\Throwable $th) {
-            //throw $th;
-            return $this->errorResponse(['data' => 'failed'], 401);
-        }
+        // } catch (\Throwable $th) {
+        //     //throw $th;
+        //     return $this->errorResponse(['data' => 'failed'], 401);
+        // }
     }
 
     public function store(Request $request)

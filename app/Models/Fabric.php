@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Fabric extends Model
 {
@@ -17,6 +18,7 @@ class Fabric extends Model
         'machine_id',
         'brand',
         'po_number',
+        'created_at',
     ];
 
     protected $casts = [
@@ -35,6 +37,14 @@ class Fabric extends Model
         // 'point'         => 'required_without_all:jenis_kain,custom_point|integer|min:1',
         // 'custom_point'  => 'required_without:point|integer|min:1',
     ];
+
+    public function getCreatedAtAttribute() {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['created_at'])->tz('Asia/Jakarta')->format('d-m-Y');
+    }
+
+    public function getUpdatedAtAttribute() {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['updated_at'])->tz('Asia/Jakarta')->format('d-m-Y');
+    }
 
     public function scopeFabricJson($query)
     {
