@@ -5,13 +5,13 @@
 All Api use this authentication
 
 Request:
-    - Header :
+- Header :
         * Bearer: "yout token"
 
 ## Retrive Fabric
 
 Request:
-    - Method: GET
+- Method: GET
     - Endpoint: /api/v1/fabrics
     - Header:
         * Content-Type: application/json
