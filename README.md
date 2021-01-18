@@ -224,16 +224,6 @@ All Api use this authentication
             * Content-Type: application/json
             * Accept: application/json
             * Bearer Token: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1N"
-        - Body: 
-        ```
-        {
-            "fabric_type": "Fabric Franch Terry",
-            "machine_id: : "002"
-            "brand": "Franch Terry"
-            "po_number": "0554124"
-        }
-
-        ```
 - Response:
 
     ```
