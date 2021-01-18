@@ -1,5 +1,16 @@
 # **API Spec - Fabric Grey**
 
+# Feature
+
+* JWT Auth
+* MYSQL Database
+
+# Build
+    - git clone reposotory
+    - composer update
+    - copy .env.example to .env
+    - php artisan jwt:secret
+
 ## Authenticaion
 
 All Api use this authentication
