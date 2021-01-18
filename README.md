@@ -32,8 +32,8 @@ All Api use this authentication
     - Body: 
     ```
     {
-        "name": "test1",
-        "password": "test1"
+        "name": "string",
+        "password": "string"
     }
 
     ```
@@ -61,9 +61,9 @@ All Api use this authentication
         - Body: 
         ```
         {
-            "name": "test1",
-            "email: : "test@gmail.com"
-            "password": "test1"
+            "name": "string",
+            "email: : "string"
+            "password": "string"
         }
 
         ```
@@ -72,11 +72,11 @@ All Api use this authentication
     ```
     {
         "user": {
-            "name": "test2",
-            "email": "test3",
-            "updated_at": "2021-01-18T03:34:47.000000Z",
-            "created_at": "2021-01-18T03:34:47.000000Z",
-            "id": 4
+            "name": "string",
+            "email": "string",
+            "updated_at": "timestamp",
+            "created_at": "timestamp",
+            "id": "integer"
         },
         "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1N"
     }
@@ -95,10 +95,10 @@ All Api use this authentication
         - Body: 
         ```
         {
-            "fabric_type": "Fabric Franch Terry",
-            "machine_id: : "001"
-            "brand": "Franch Terry"
-            "po_number": "0554124"
+            "fabric_type": "string",
+            "machine_id: : "integer"
+            "brand": "string"
+            "po_number": "integer"
         }
 
         ```
@@ -108,13 +108,13 @@ All Api use this authentication
    {
         "massage": "POST Data",
         "data": {
-            "fabric_type": "Fabric Franch Terry",
-            "machine_id": "001",
-            "brand": "Franch Terry",
-            "po_number": "0554124",
-            "updated_at": "18-01-2021",
-            "created_at": "18-01-2021",
-            "id": 31
+            "fabric_type": "string",
+            "machine_id: : "integer"
+            "brand": "string"
+            "po_number": "integer"
+            "updated_at": "timestamp",
+            "created_at": "timestamp",
+            "id": "id"
         },
         "code": 200
     }
@@ -137,22 +137,22 @@ All Api use this authentication
         "massage": "GET Success",
         "data": [
             {
-                "id": 19,
-                "fabric_type": "HAI",
-                "machine_id": 0,
-                "brand": "Example",
-                "po_number": 12312312,
-                "created_at": "14-01-2021",
-                "updated_at": "14-01-2021"
+                "id": "integer",
+                "fabric_type": "string",
+                "machine_id: : "integer"
+                "brand": "string"
+                "po_number": "integer"
+                "updated_at": "timestamp",
+                "created_at": "timestamp",
             },
             {
-                "id": 20,
-                "fabric_type": "HAI",
-                "machine_id": 11,
-                "brand": "11",
-                "po_number": 12312312,
-                "created_at": "14-01-2021",
-                "updated_at": "14-01-2021"
+                "id": integer,
+                "fabric_type": "string",
+                "machine_id: : "integer"
+                "brand": "string"
+                "po_number": "integer"
+                "updated_at": "timestamp",
+                "created_at": "timestamp",
             },
         ],
         "code": 200
@@ -174,20 +174,20 @@ All Api use this authentication
     {
         "massage": "GET ID Success",
         "result": {
-            "id": 20,
-            "fabric_type": "astagfirulloh",
-            "machine_id": 1,
-            "brand": "asd",
-            "po_number": 123,
-            "created_at": "14-01-2021",
-            "updated_at": "18-01-2021",
+            "id": integer,
+            "fabric_type": "string",
+            "machine_id: : "integer"
+            "brand": "string"
+            "po_number": "integer"
+            "updated_at": "timestamp",
+            "created_at": "timestamp",
             "machine": {
-                "id": 1,
-                "name": "Machine 001",
-                "short_name": "MC01",
-                "type_machine": "HKTEX",
-                "created_at": null,
-                "updated_at": null
+                "id": "integer",
+                "name": "string",
+                "short_name": "string",
+                "type_machine": "string",
+                "created_at": "timestamp",
+                "updated_at": "timestamp"
             }
         },
         "code": 200
@@ -207,10 +207,10 @@ All Api use this authentication
         - Body: 
         ```
         {
-            "fabric_type": "Fabric Franch Terry",
-            "machine_id: : "002"
-            "brand": "Franch Terry"
-            "po_number": "0554124"
+            "fabric_type": "string",
+            "machine_id: : "integer"
+            "brand": "string"
+            "po_number": "integer"
         }
 
         ```
@@ -220,13 +220,13 @@ All Api use this authentication
    {
         "massage": "PUT Data",
         "data": {
-            "fabric_type": "Fabric Franch Terry",
-            "machine_id": "002",
-            "brand": "Franch Terry",
-            "po_number": "0554124",
-            "updated_at": "18-01-2021",
-            "created_at": "18-01-2021",
-            "id": 31
+            "fabric_type": "string",
+            "machine_id: : "integer"
+            "brand": "string"
+            "po_number": "integer"
+            "updated_at": "timestamp",
+            "created_at": "timestamp",
+            "id": "id"
         },
         "code": 200
     }
@@ -248,13 +248,13 @@ All Api use this authentication
    {
         "massage": "Delete Data",
         "data": {
-            "fabric_type": "Fabric Franch Terry",
-            "machine_id": "002",
-            "brand": "Franch Terry",
-            "po_number": "0554124",
-            "updated_at": "18-01-2021",
-            "created_at": "18-01-2021",
-            "id": 31
+            "fabric_type": "string",
+            "machine_id: : "integer"
+            "brand": "string"
+            "po_number": "integer"
+            "updated_at": "timestamp",
+            "created_at": "timestamp",
+            "id": "id"
         },
         "code": 200
     }
