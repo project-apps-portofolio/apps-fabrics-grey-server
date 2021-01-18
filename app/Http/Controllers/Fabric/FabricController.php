@@ -129,4 +129,10 @@ class FabricController extends Controller
 
         return $response;
     }
+
+    public function show($id) {
+        $data = Fabric::with('machine')->where('id', $id)->first();
+
+        return $this->sendResponse($data, 'GET ID Success', 200);
+    }
 }

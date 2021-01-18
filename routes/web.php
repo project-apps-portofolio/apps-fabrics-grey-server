@@ -33,6 +33,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('/store', 'FabricController@store');
         $router->put('/update/{id}', 'FabricController@update');
         $router->delete('/delete/{id}', 'FabricController@delete');
+        $router->get('/show/{id}', 'FabricController@show');
     });
     $router->group(['namespace' => 'Machine', 'prefix' => 'machine'], function () use ($router) {
         $router->get('/', 'MachineController@index');

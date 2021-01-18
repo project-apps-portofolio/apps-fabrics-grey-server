@@ -163,7 +163,7 @@ All Api use this authentication
 * Request:
 
     - Method: GET
-        - Endpoint: /api/v1/fabric/{param-ID}
+        - Endpoint: /api/v1/fabric/show/{param-ID}
         - Header:
             * Content-Type: application/json
             * Accept: application/json
@@ -171,19 +171,25 @@ All Api use this authentication
 - Response:
 
     ```
-   {
-        "massage": "GET Success",
-        "data": [
-            {
-                "id": 19,
-                "fabric_type": "HAI",
-                "machine_id": 0,
-                "brand": "Example",
-                "po_number": 12312312,
-                "created_at": "14-01-2021",
-                "updated_at": "14-01-2021"
-            },
-        ],
+    {
+        "massage": "GET ID Success",
+        "result": {
+            "id": 20,
+            "fabric_type": "astagfirulloh",
+            "machine_id": 1,
+            "brand": "asd",
+            "po_number": 123,
+            "created_at": "14-01-2021",
+            "updated_at": "18-01-2021",
+            "machine": {
+                "id": 1,
+                "name": "Machine 001",
+                "short_name": "MC01",
+                "type_machine": "HKTEX",
+                "created_at": null,
+                "updated_at": null
+            }
+        },
         "code": 200
     }
     ```

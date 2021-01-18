@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
+use App\Models\Machine;
 
 class Fabric extends Model
 {
@@ -11,7 +12,9 @@ class Fabric extends Model
     protected $table = 'fabrics';
 
     protected $brand_name = '';
-    protected $guarded = [];  
+    // protected $guarded = [
+    //     'machine_id'
+    // ];  
 
     protected $fillable = [
         'fabric_type',
@@ -38,6 +41,10 @@ class Fabric extends Model
         // 'custom_point'  => 'required_without:point|integer|min:1',
     ];
 
+    public function machine() {
+        return $this->belongsTo(Machine::class);
+    }
+
     public function getCreatedAtAttribute() {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['created_at'])->tz('Asia/Jakarta')->format('d-m-Y');
     }
@@ -49,6 +56,10 @@ class Fabric extends Model
     public function scopeFabricJson($query)
     {
         return $query->select('*')->get();
+    }
+
+    public function scopeFabricJsonId($query, $id) {
+        return $query->select('*')->where('id', $id)->first();
     }
 
     public function setPoNumberAttribute($value)
