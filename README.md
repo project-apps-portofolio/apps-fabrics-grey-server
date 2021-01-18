@@ -218,7 +218,7 @@ All Api use this authentication
 
 * Request:
 
-    - Method: PUT
+    - Method: DELETE
         - Endpoint: /api/v1/fabric/delete/{param-ID}
         - Header:
             * Content-Type: application/json
