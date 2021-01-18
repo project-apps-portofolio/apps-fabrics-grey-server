@@ -3,13 +3,14 @@
 # Feature
 
 * JWT Auth
-* MYSQL Database
+* MYSQL
 
 # Build
     - git clone reposotory
     - composer update
     - copy .env.example to .env
     - php artisan jwt:secret
+    - php -S localhost:8000 -s public
 
 ## Authenticaion
 
@@ -17,7 +18,7 @@ All Api use this authentication
 
 * Request:
     - Header :
-        * Bearer-Token: "yout token"
+        * Bearer-Token: "your token"
 
 ## Login
 
