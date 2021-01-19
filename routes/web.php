@@ -13,8 +13,8 @@
 |
 */
 
-// header('Access-Control-Allow-Origin: *');
-header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
+header('Access-Control-Allow-Origin: *');
+// header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 header( 'Access-Control-Allow-Headers: *');
 header('Access-Control-Allow-Methods:*');
 
