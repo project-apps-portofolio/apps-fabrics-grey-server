@@ -37,5 +37,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     });
     $router->group(['namespace' => 'Machine', 'prefix' => 'machine'], function () use ($router) {
         $router->get('/', 'MachineController@index');
+        $router->post('/store', 'MachineController@store');
+        $router->put('/update/{id}', 'MachineController@update');
+        $router->delete('/delete/{id}', 'MachineController@delete');
+        $router->get('/show/{id}', 'MachineController@show');
     });
 });
