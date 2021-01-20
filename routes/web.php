@@ -43,7 +43,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('/show/{id}', 'MachineController@show');
     });
 
-    $router->group(['namespace' => 'Fabric', 'prefix' => 'schedules'], function () use ($router) {
-        $router->get('/', 'FabricController@schedules');
+    $router->group(['namespace' => 'Schedule', 'prefix' => 'schedules'], function () use ($router) {
+        $router->get('/', 'ScheduleController@index');
     });
 });
