@@ -13,8 +13,8 @@
 |
 */
 
-header('Access-Control-Allow-Origin: *');
-// header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
+// header('Access-Control-Allow-Origin: *');
+header( 'Access-Control-Allow-Headers: Authorization, Content-Type' );
 header( 'Access-Control-Allow-Headers: *');
 header('Access-Control-Allow-Methods:*');
 
@@ -41,5 +41,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->put('/update/{id}', 'MachineController@update');
         $router->delete('/delete/{id}', 'MachineController@delete');
         $router->get('/show/{id}', 'MachineController@show');
+    });
+
+    $router->group(['namespace' => 'Fabric', 'prefix' => 'schedules'], function () use ($router) {
+        $router->get('/', 'FabricController@schedules');
     });
 });

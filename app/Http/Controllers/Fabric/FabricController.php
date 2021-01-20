@@ -135,4 +135,10 @@ class FabricController extends Controller
 
         return $this->sendResponse($data, 'GET ID Success', 200);
     }
+
+    public function schedules() {
+        $data = Fabric::with('machine')->get();
+
+        return response()->json($data);
+    }
 }
