@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Database\Seeders\ScheduleSeed;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call('UsersTableSeeder');
+        $this->call(ScheduleSeed::class);
     }
 }

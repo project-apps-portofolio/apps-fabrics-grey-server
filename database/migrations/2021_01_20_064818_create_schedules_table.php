@@ -23,6 +23,7 @@ class CreateSchedulesTable extends Migration
             $table->dateTime('end');
             $table->string('is_all_day');
             $table->integer('machine_id');
+            $table->integer('job_id');
             $table->timestamps();
         });
     }

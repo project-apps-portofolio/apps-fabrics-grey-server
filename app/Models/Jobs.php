@@ -3,12 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Fabric;
 use App\Models\Machine;
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Schedules extends Model {
+class Jobs extends Model {
 
     // use SoftDeletes;
 
@@ -23,7 +21,6 @@ class Schedules extends Model {
         'end',
         'is_all_day',
         'machine_id',
-        'job_id',
     ];
 
     public function machine() {

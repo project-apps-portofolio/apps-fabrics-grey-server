@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Fabric;
+use App\Models\Schedules;
 use Carbon\Carbon;
 
 class Machine extends Model {
@@ -39,6 +40,10 @@ class Machine extends Model {
 
     public function fabric() {
         return $this->hasMany(Fabric::class);
+    }
+
+    public function schedule() {
+        return $this->hasMany(Schedules::class);
     }
 
     public function scopeMachineJson($query) {
