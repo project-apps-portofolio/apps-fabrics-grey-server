@@ -22,6 +22,7 @@ class MachineController extends Controller
     {
 
         $data = Machine::MachineJson();
+        // var_dump($data); die;
         $format = request()->format();
 
         if ($data->count() > 0) {

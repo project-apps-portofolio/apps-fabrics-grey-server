@@ -5,30 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Machine;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Jobs extends Model {
 
     // use SoftDeletes;
 
-    protected $table = 'schedules';
+    protected $table = 'jobs';
 
     protected $fillable = [
-        'date',
-        'owner_id',
-        'title',
-        'description',
-        'start',
-        'end',
-        'is_all_day',
-        'machine_id',
+        'process_number',
+        'po_number',
     ];
 
-    public function machine() {
-        return $this->belongsTo(Machine::class);
+    public function getCreatedAtAttribute() {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['created_at'])->tz('Asia/Jakarta')->format('d-m-Y');
     }
 
-    public function scopeScheduleJson($query) {
-        return $query->select('*')->get();
+    public function getUpdatedAtAttribute() {
+        return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['updated_at'])->tz('Asia/Jakarta')->format('d-m-Y');
     }
     
 }

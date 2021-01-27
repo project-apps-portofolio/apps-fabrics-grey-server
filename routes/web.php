@@ -45,7 +45,13 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->group(['namespace' => 'Schedule', 'prefix' => 'schedules'], function () use ($router) {
         $router->get('/', 'ScheduleController@index');
+        $router->post('/store', 'ScheduleController@store');
         $router->get('/show/{id}', 'ScheduleController@show');
         $router->delete('/delete/{id}', 'ScheduleController@delete');
+    });
+
+    $router->group(['namespace' => 'Job', 'prefix' => 'job'], function () use ($router) {
+        $router->post('/store', 'JobController@store');
+        $router->get('/', 'JobController@index');
     });
 });

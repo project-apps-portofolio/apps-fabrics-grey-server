@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Schedule;
 
 use App\Http\Controllers\Controller;
 use App\Models\Schedules;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request;
 use App\Traits\ApiResponser;
 
 class ScheduleController extends Controller
@@ -18,7 +18,10 @@ class ScheduleController extends Controller
     }
 
     public function store(Request $request) {
-
+        
+        $data = $request->all();
+        
+        return response()->json($data);
     }
 
     public function update(Request $request, $id) {
