@@ -54,4 +54,9 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->post('/store', 'JobController@store');
         $router->get('/', 'JobController@index');
     });
+
+    $router->group(['namespace' => 'Customer', 'prefix' => 'customers'], function () use ($router) {
+        $router->get('/', 'CustomerController@index');
+        $router->post('/', 'CustomerController@store');
+    });
 });
