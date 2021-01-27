@@ -57,6 +57,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
 
     $router->group(['namespace' => 'Customer', 'prefix' => 'customers'], function () use ($router) {
         $router->get('/', 'CustomerController@index');
-        $router->post('/', 'CustomerController@store');
+        $router->post('/store', 'CustomerController@store');
+        $router->put('/update/{id}', 'CustomerController@update');
     });
 });
