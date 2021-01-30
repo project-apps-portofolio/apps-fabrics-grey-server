@@ -59,5 +59,6 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('/', 'CustomerController@index');
         $router->post('/store', 'CustomerController@store');
         $router->put('/update/{id}', 'CustomerController@update');
+        $router->delete('/delete/{id}', 'CustomerController@delete');
     });
 });

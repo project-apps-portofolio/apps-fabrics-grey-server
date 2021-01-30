@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Machine;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use DB;
 
 class Customer extends Model {
 
@@ -34,6 +35,11 @@ class Customer extends Model {
 
     public function getUpdatedAtAttribute() {
         return Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['updated_at'])->tz('Asia/Jakarta')->format('d-m-Y');
+    }
+
+    public function scopeAutoIncrement($query) {
+       return DB::select("SHOW TABLE STATUS LIKE 'customers'");
+        // $nextId = $query[0]->Auto_increment;
     }
     
 }
