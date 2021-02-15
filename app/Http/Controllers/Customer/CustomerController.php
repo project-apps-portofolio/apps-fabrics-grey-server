@@ -98,5 +98,13 @@ class CustomerController extends Controller
 
     }
 
+
+    public function show($id) {
+
+        $data = Customer::findOrFail($id);
+
+        var_dump($data); die;
+    }
+
     //
 }
