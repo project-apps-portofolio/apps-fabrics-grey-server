@@ -30,6 +30,10 @@ class ColorNumber extends Model {
         return $query->select('*')->get();
     }
 
+    public function scopeFindById($query, $id) {
+        return $query->where('id', $id)->get();
+    }
+
     public function ColorNumberSave() {
 
         $request = request();

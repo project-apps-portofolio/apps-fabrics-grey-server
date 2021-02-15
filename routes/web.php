@@ -65,5 +65,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->group(['namespace' => 'ColorNumber', 'prefix' => 'color_number'], function() use ($router) {
         $router->get('/', 'ColorNumberController@index');
         $router->post('/store', 'ColorNumberController@store');
+        $router->get('/edit/{id}', 'ColorNumberController@edit');
+        $router->put('/update/{id}', 'ColorNumberController@update');
+        $router->delete('/delete/{id}', 'ColorNumberController@destroy');
     });
 });

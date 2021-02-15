@@ -69,18 +69,77 @@ class ColorNumberController extends Controller
         }
 
         return $this->sendResponse($data, 'DATA POST Color Number', 200);
-        
     }
 
-    public function edit()
+    public function edit($id)
     {
+
+        $format = request()->format();
+        $data = ColorNumber::FindById($id);
+
+        if ($data->count() > 0) {
+            switch ($format) {
+                case 'json':
+                default:
+                    $response = $this->sendResponse($data, 'GET Color Number By Id');
+                    break;
+            }
+        } else {
+            switch ($format) {
+                case 'json':
+                default:
+                    $response = $this->sendResponse($data, 'GET Color Nimber');
+                    break;
+            }
+        }
+
+        return $response;
     }
 
-    public function update()
+    public function update($id)
     {
+        $request = request();
+        $format = request()->format();
+        $data = ColorNumber::findOrFail($id);
+
+        $data->previous_color_number_id = $request->previous_color_number_id;
+        $data->customer_id = $request->customer_id;
+        $data->color_ref_id = $request->color_ref_id;
+        $data->color_code = $request->color_code;
+        $data->color_common_name = $request->color_common_name;
+        $data->is_polyester = $request->is_polyester;
+        $data->fabric_type = $request->fabric_type;
+        $data->total_price = $request->total_price;
+        $data->is_standard = $request->is_standard;
+
+
+        if ($data->save()) {
+            $response = $this->sendResponse($data, 'PUT Color Number Success', 200);
+        } else {
+            $response = $this->errorResponse('ERRORS', 'PUT Color Number Success', 401);
+        }
+
+        return $response;
     }
 
-    public function destroy()
+    public function destroy($id)
     {
+
+        try {
+            $data = ColorNumber::findOrFail($id);
+
+            if ($data->delete()) {
+                $response = $this->sendResponse($data, 'PUT Color Number Success', 200);
+            } else {
+                $response = $this->errorResponse('ERRORS', 'PUT Color Number Success', 401);
+            }
+
+            return $response;
+        } catch (\Throwable $th) {
+            return response()->json($th->getMessage());
+        } catch (\Illuminate\Database\QueryException $ex) {
+
+            return response()->json($ex->getMessage());
+        }
     }
 }
